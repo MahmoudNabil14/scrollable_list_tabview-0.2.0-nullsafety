@@ -23,7 +23,7 @@ class ScrollableListTabView extends StatefulWidget {
       fontWeight: FontWeight.w500,
       fontSize: 12
     ),
-    this.bodyTopWidget,
+
     this.tabAnimationDuration = kScrollDuration,
     this.bodyAnimationDuration = kScrollDuration,
     this.tabAnimationCurve = Curves.decelerate,
@@ -34,7 +34,7 @@ class ScrollableListTabView extends StatefulWidget {
   /// List of tabs to be rendered.
   final List<ScrollableListTab> tabs;
 
-  final Widget? bodyTopWidget;
+
 
   final Color? tabsBackgroundColor;
 
@@ -75,7 +75,6 @@ class _ScrollableListTabViewState extends State<ScrollableListTabView> {
 
   @override
   Widget build(BuildContext context) {
-    print("hi");
     return Column(
       children: [
         Container(
@@ -142,14 +141,14 @@ class _ScrollableListTabViewState extends State<ScrollableListTabView> {
     );
   }
 
-  Widget _buildInnerTab(int index) {
+  Widget _buildInnerTab(int index,) {
     final tab = widget.tabs[index].tab;
     return Builder(
       builder: (context) {
         return Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [DefaultTextStyle( style: widget.style,child: tab.label), widget.bodyTopWidget ?? SizedBox()],
+          children: [DefaultTextStyle( style: widget.style,child: tab.label), widget.tabs[index].bodyTopWidget ?? SizedBox()],
         );
       }
     );

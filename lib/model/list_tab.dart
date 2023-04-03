@@ -15,6 +15,7 @@ class ListTab {
   /// Trailing widget for a tab, typically an [Icon].
   final Widget? icon;
 
+
   /// Label to be shown in the tab, must be non-null.
   final Widget label;
 

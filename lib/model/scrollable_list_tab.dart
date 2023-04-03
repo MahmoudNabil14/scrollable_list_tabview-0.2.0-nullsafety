@@ -7,10 +7,13 @@ class ScrollableListTab {
   ScrollableListTab({
     required this.tab,
     required this.body,
+    this.bodyTopWidget,
   }) : assert(body.shrinkWrap && body.physics is NeverScrollableScrollPhysics);
 
   /// A data class for tab properties
   final ListTab tab;
+
+  final Widget? bodyTopWidget;
 
   /// A single widget in the scrollable tab list.
   /// Make sure that [body] is created with [ScrollView.shrinkWrap] = true
